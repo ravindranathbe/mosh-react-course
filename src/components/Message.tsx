@@ -1,19 +1,11 @@
 const Message = () => {
   const name = null; //"Ravi";
 
-  if (name) {
-    return (
-      <div className="alert alert-primary" role="alert">
-        Hello {name}, A simple primary alert—check it out!
-      </div>
-    );
-  }
+  if (!name) return <p>Hello world</p>;
 
   return (
     <>
-      <div className="alert alert-primary" role="alert">
-        Hello {name}, A simple primary alert—check it out!
-      </div>
+      <p>Hello {name}</p>
     </>
   );
 };
