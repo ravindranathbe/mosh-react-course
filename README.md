@@ -18,7 +18,7 @@ To run this project locally, follow these steps:
 
 ## Learning Branches
 
-**Each branch in this repository contains learning codes** corresponding to different chapters and topics covered in the course. 
+**Each branch in this repository contains learning codes** corresponding to different chapters and topics covered in the course.
 
 To view the code for a specific topic, switch to the respective branch:
 
@@ -27,5 +27,7 @@ git checkout <branch-name>
 ```
 
 ### Current Branches:
+
 - **`master`**: Main branch
-- **`chapter_1`**: Practice codes for Chapter 1 
+- **`chapter_1`**: Practice codes for Chapter 1
+- **`chapter_2`**: Practice codes for Chapter 2
