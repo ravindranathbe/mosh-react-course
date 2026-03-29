@@ -1,4 +1,3 @@
-import styles from "./Alert.module.css";
 import type { ReactNode } from "react";
 
 interface Props {
