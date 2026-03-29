@@ -1,13 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
   return (
     <>
-      <Alert onClose={() => console.log("Alert closed")}>
-        Hello <span>World</span>
-      </Alert>
+      <Button
+        label="Button"
+        color="primary"
+        onClick={() => console.log("Button clicked")}
+      />
     </>
   );
 }
