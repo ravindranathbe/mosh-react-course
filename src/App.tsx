@@ -8,14 +8,15 @@ function App() {
     price: 0,
   });
 
+  const handleClick = () => {
+    setDrink({ ...drink, price: drink.price + 1 });
+  };
+
   return (
     <>
       <h1>Title: {drink.title}</h1>
       <p>Price: ${drink.price}</p>
-      <button
-        className="btn btn-primary"
-        onClick={() => setDrink({ ...drink, price: drink.price + 1 })}
-      >
+      <button className="btn btn-primary" onClick={handleClick}>
         Increase price
       </button>
     </>
