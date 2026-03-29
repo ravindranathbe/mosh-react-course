@@ -1,14 +1,15 @@
 import styles from "./Alert.module.css";
+import type { ReactNode } from "react";
 
 interface Props {
-  message: string;
   onClose: () => void;
+  children: ReactNode;
 }
 
-const Alert = ({ message, onClose }: Props) => {
+const Alert = ({ children, onClose }: Props) => {
   return (
     <div className="alert alert-danger alert-dismissible fade show">
-      {message}{" "}
+      {children}{" "}
       <button
         type="button"
         className="btn-close"
