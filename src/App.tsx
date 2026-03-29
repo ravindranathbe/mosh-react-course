@@ -1,11 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Message from "./components/Message";
+import ListGroup from "./components/ListGroup";
 
 function App() {
   return (
     <>
-      <Message />
+      <ListGroup
+        items={["New York", "Los Angeles", "Chicago"]}
+        heading="Cities"
+      />
     </>
   );
 }
