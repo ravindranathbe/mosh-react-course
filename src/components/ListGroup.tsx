@@ -1,17 +1,35 @@
+import { useState } from "react";
+
 interface Props {
   items?: string[];
   heading: string;
+  onSelectItem: (item: string) => void;
 }
 
-const ListGroup = ({ items, heading }: Props) => {
+const ListGroup = ({ items, heading, onSelectItem }: Props) => {
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+
   if (!items) return <p>No items found</p>;
 
   return (
     <>
       <h2>{heading}</h2>
       <ul className="list-group">
-        {items.map((item) => (
-          <li className="list-group-item">{item}</li>
+        {items.map((item, index) => (
+          <li
+            key={item}
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+            onClick={() => {
+              setSelectedIndex(index);
+              onSelectItem(item);
+            }}
+          >
+            {item}
+          </li>
         ))}
       </ul>
     </>
