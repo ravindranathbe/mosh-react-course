@@ -3,25 +3,30 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [tags, setTags] = useState(["tag1", "tag2", "tag3"]);
+  const [bugs, setBugs] = useState([
+    { id: 1, title: "Bug 1", fixed: false },
+    { id: 2, title: "Bug 2", fixed: false },
+    { id: 3, title: "Bug 3", fixed: false },
+  ]);
 
   const handleClick = () => {
-    setTags([...tags, "tag4"]);
-  };
-
-  const handleUpdate = () => {
-    setTags(tags.map((tag) => (tag === "tag2" ? "tag2-updated" : tag)));
+    setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
   };
 
   return (
     <>
-      <h1>Tags: {tags.map((tag) => tag + " ")}</h1>
+      <h1>Bugs</h1>
+
+      <ul>
+        {bugs.map((bug) => (
+          <li key={bug.id}>
+            {bug.title} {bug.fixed ? "Fixed" : "Not Fixed"}
+          </li>
+        ))}
+      </ul>
+
       <button className="btn btn-primary" onClick={handleClick}>
-        Add Tag
-      </button>
-      <br />
-      <button className="btn btn-primary" onClick={handleUpdate}>
-        Update Tag "tag2" to "tag2-updated"
+        Mark Bug 1 as Fixed
       </button>
     </>
   );
