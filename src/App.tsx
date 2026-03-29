@@ -3,21 +3,28 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [drink, setDrink] = useState({
-    title: "Water",
-    price: 0,
+  const [customer, setCustomer] = useState({
+    name: "John",
+    address: {
+      street: "123 Main St",
+      city: "New York",
+      zipCode: "12345",
+    },
   });
 
   const handleClick = () => {
-    setDrink({ ...drink, price: drink.price + 1 });
+    setCustomer({
+      ...customer,
+      address: { ...customer.address, zipCode: "12121" },
+    });
   };
 
   return (
     <>
-      <h1>Title: {drink.title}</h1>
-      <p>Price: ${drink.price}</p>
+      <h1>Name: {customer.name}</h1>
+      <p>Zip Code: {customer.address.zipCode}</p>
       <button className="btn btn-primary" onClick={handleClick}>
-        Increase price
+        Update Zip Code to "12121"
       </button>
     </>
   );
